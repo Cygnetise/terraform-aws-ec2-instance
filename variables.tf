@@ -121,7 +121,7 @@ variable "ebs_encrypted" {
 }
 
 variable "ebs_kms_key_id" {
-  type        = bool
+  type        = string
   description = "The ARN for the KMS encryption key"
   default     = ""
 }
