@@ -114,6 +114,18 @@ variable "ebs_optimized" {
   default     = false
 }
 
+variable "ebs_encrypted" {
+  type        = bool
+  description = "Launched EC2 instance will be encrypted"
+  default     = false
+}
+
+variable "ebs_kms_key_id" {
+  type        = bool
+  description = "The ARN for the KMS encryption key"
+  default     = ""
+}
+
 variable "disable_api_termination" {
   type        = bool
   description = "Enable EC2 Instance Termination Protection"

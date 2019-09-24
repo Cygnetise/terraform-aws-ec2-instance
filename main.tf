@@ -144,6 +144,8 @@ resource "aws_ebs_volume" "default" {
   iops              = local.ebs_iops
   type              = var.ebs_volume_type
   tags              = module.label.tags
+  encrypted         = var.ebs_encrypted
+  kms_key_id        = var.ebs_kms_key_id
 }
 
 resource "aws_volume_attachment" "default" {
