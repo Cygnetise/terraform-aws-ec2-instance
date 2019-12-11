@@ -114,18 +114,6 @@ variable "ebs_optimized" {
   default     = false
 }
 
-variable "ebs_encrypted" {
-  type        = bool
-  description = "Launched EC2 instance will be encrypted"
-  default     = false
-}
-
-variable "ebs_kms_key_id" {
-  type        = string
-  description = "The ARN for the KMS encryption key"
-  default     = ""
-}
-
 variable "disable_api_termination" {
   type        = bool
   description = "Enable EC2 Instance Termination Protection"
@@ -178,6 +166,18 @@ variable "root_iops" {
   type        = number
   description = "Amount of provisioned IOPS. This must be set if root_volume_type is set to `io1`"
   default     = 0
+}
+
+variable "root_encrypted" {
+  type        = bool
+  description = "Launched EC2 instance will be encrypted"
+  default     = false
+}
+
+variable "root_kms_key_id" {
+  type        = string
+  description = "The ARN for the KMS encryption key"
+  default     = ""
 }
 
 variable "ebs_device_name" {

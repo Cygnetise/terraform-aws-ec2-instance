@@ -119,6 +119,8 @@ resource "aws_instance" "default" {
     volume_size           = var.root_volume_size
     iops                  = local.root_iops
     delete_on_termination = var.delete_on_termination
+    encrypted             = var.root_encrypted
+    kms_key_id            = var.root_kms_key_id
   }
 
   tags = module.label.tags
