@@ -210,6 +210,18 @@ variable "ebs_volume_count" {
   default     = 0
 }
 
+variable "ebs_encrypted" {
+  type        = bool
+  description = "Launched EC2 instance will be encrypted"
+  default     = false
+}
+
+variable "ebs_kms_key_id" {
+  type        = string
+  description = "The ARN for the KMS encryption key"
+  default     = ""
+}
+
 variable "delete_on_termination" {
   type        = bool
   description = "Whether the volume should be destroyed on instance termination"
