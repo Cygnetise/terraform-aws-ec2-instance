@@ -174,6 +174,24 @@ variable "root_encrypted" {
   default     = false
 }
 
+variable "metadata_http_tokens_required" {
+  type        = bool
+  default     = true
+  description = "Whether or not the metadata service requires session tokens, also referred to as Instance Metadata Service Version 2."
+}
+
+variable "metadata_http_endpoint_enabled" {
+  type        = bool
+  default     = true
+  description = "Whether the metadata service is available"
+}
+
+variable "metadata_http_put_response_hop_limit" {
+  type        = number
+  default     = 2
+  description = "The desired HTTP PUT response hop limit (between 1 and 64) for instance metadata requests."
+}
+
 variable "root_kms_key_id" {
   type        = string
   description = "The ARN for the KMS encryption key"
